@@ -1,23 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="presets.css" />
+    <link rel="stylesheet" href="main-page.css" />
+    <title>이호연의 연대기</title>
+  </head>
+  <body>
+    <header class="header-outer">
+      <div class="header-inner">
+        <a href="/" class="logo-container img-container">
+          <img src="" alt="" />
+        </a>
+        <nav class="main-menu-container">
+          <ul class="main-menu">
+            <li class="menu-item"><a href="./pages/about.html">About</a></li>
+            <li class="menu-item">
+              <a href="./pages/activities.html">Activities</a>
+            </li>
+            <li class="menu-item"><a href="./pages/works.html">Works</a></li>
+            <li class="menu-item">
+              <a href="./pages/hobbies.html">Hobbies & Archievement</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <section class="container-full">
-
-        </section>
+      <section class="full-header">
+        <img src="assets/images/bg.jpg" alt="" />
+      </section>
+      <section id="about-section" class="container-full">
+        <div class="section-inner-container container-sm">
+          <div class="about-container">
+            <div class="about-visual">
+              <h2 class="huge-text outline-text">ABOUT</h2>
+              <h2 class="huge-text filled-text">ME</h2>
+            </div>
+            <div class="about-content">
+              <h3 class="fade-in-text">Creating Digital <span class="highlight-text">Experiences</span></h3>
+              <p class="fade-in-text delay-1">
+                Welcome to my digital space. I am a passionate individual dedicated to creating meaningful experiences. 
+                Explore my journey, achievements, and the projects that define who I am.
+              </p>
+              <div class="fade-in-text delay-2">
+                <a href="./pages/about.html" class="btn-premium">Discover More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="activities-section" class="container-full">
+        <div class="section-inner-container container-sm">
+          <div class="home-section-title">
+            <h2>Activities</h2>
+          </div>
+          <div class="home-section-contents">
+            This is Activities Section
+          </div>
+        </div>
+      </section>
+      <section id="works-section" class="container-full">
+        <div class="section-inner-container container-sm">
+          <div class="home-section-title">
+            <h2>Works</h2>
+          </div>
+          <div class="home-section-contents">
+            This is Works Section
+          </div>
+        </div>
+      </section>
+      <section id="hobbies-section" class="container-full">
+        <div class="section-inner-container container-sm">
+          <div class="home-section-title">
+            <h2>Hobbies & Archievement</h2>
+          </div>
+          <div class="home-section-contents">
+            This is Hobbies & Archievement Section
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>
+    <footer></footer>
+  </body>
 
-    </footer>
-</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const headerOuter = document.querySelector(".header-outer");
+      
+      const handleScroll = () => {
+        const scrollTop = window.scrollY;
+        const windowHeight = window.innerHeight;
+        
+        // Calculate opacity based on scroll position (0 to 100vh)
+        let opacity = scrollTop / windowHeight;
+        
+        // Clamp opacity between 0 and 1
+        if (opacity > 1) opacity = 1;
+        if (opacity < 0) opacity = 0;
+        
+        // Apply dynamic background color
+        headerOuter.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
+        
+        // Add 'scrolled' class when passing the threshold (e.g., 90% of viewport)
+        // This handles border, shadow, and size transitions
+        if (scrollTop > windowHeight * 0.9) {
+          if (!document.body.classList.contains("scrolled")) {
+            document.body.classList.add("scrolled");
+          }
+        } else {
+          if (document.body.classList.contains("scrolled")) {
+            document.body.classList.remove("scrolled");
+          }
+        }
+      };
+
+      document.addEventListener("scroll", handleScroll);
+      // Initial check
+      handleScroll();
+    });
+
+  </script>
 </html>
