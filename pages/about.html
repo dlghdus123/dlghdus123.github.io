@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../header.css" />
+    <link rel="stylesheet" href="../presets.css" />
+    <link rel="stylesheet" href="../main-page.css" />
+    <title>이호연의 연대기</title>
+  </head>
+  <body>
+    <header class="header-outer">
+      <div class="header-inner">
+        <a href="../index.html" class="logo-container img-container">
+          <img src="" alt="" />
+        </a>
+        <nav class="main-menu-container">
+          <ul class="main-menu">
+            <li class="menu-item"><a href=".about.html">About</a></li>
+            <li class="menu-item">
+              <a href="./activities.html">Activities</a>
+            </li>
+            <li class="menu-item"><a href="./works.html">Works</a></li>
+            <li class="menu-item">
+              <a href="./hobbies.html">Hobbies & Archievement</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="container-full">Hello</section>
+    </main>
+
+    <footer></footer>
+  </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("scroll", (e) => {
+        const scrollTop = window.scrollY; // Vertical scroll position
+        const scrollLeft = window.scrollX; // Horizontal scroll position
+
+        // Example: Detect if scrolled to the bottom
+        if (scrollTop > 100) {
+          if (!document.querySelector("body").classList.contains("scrolled")) {
+            document.querySelector("body").classList.add("scrolled");
+          }
+        } else {
+          if (document.querySelector("body").classList.contains("scrolled")) {
+            document.querySelector("body").classList.remove("scrolled");
+          }
+        }
+      });
+    });
+  </script>
+</html>
